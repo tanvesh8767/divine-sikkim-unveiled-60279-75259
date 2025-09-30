@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sikkim Unveiled Design System - Cultural Heritage Platform
+Inspired by Buddhist monastery colors, Himalayan landscapes, and prayer flags
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base Colors - Warm monastery stones and cream paper */
+    --background: 45 25% 97%;
+    --foreground: 25 15% 15%;
+
+    /* Card System - Parchment and stone */
+    --card: 45 30% 98%;
+    --card-foreground: 25 20% 20%;
+
+    /* Popover System */
+    --popover: 45 30% 98%;
+    --popover-foreground: 25 20% 20%;
+
+    /* Primary - Saffron Gold (Sacred Buddhist Color) */
+    --primary: 40 85% 55%;
+    --primary-foreground: 45 30% 98%;
+    --primary-glow: 40 90% 65%;
+
+    /* Secondary - Deep Monastery Burgundy */
+    --secondary: 0 45% 25%;
+    --secondary-foreground: 45 30% 98%;
+
+    /* Muted - Himalayan Stone */
+    --muted: 35 15% 90%;
+    --muted-foreground: 25 15% 45%;
+
+    /* Accent - Prayer Flag Blue */
+    --accent: 210 60% 50%;
+    --accent-foreground: 45 30% 98%;
+
+    /* Monastery Crimson for Important Elements */
+    --monastery: 0 60% 35%;
+    --monastery-foreground: 45 30% 98%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 45 30% 98%;
+
+    /* Borders and Inputs - Soft monastery stone */
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 40 85% 55%;
+
+    /* Cultural Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(40 85% 55%) 0%, hsl(0 45% 25%) 100%);
+    --gradient-monastery: linear-gradient(180deg, hsl(45 25% 97%) 0%, hsl(35 15% 90%) 100%);
+    --gradient-golden: linear-gradient(45deg, hsl(40 85% 55%) 0%, hsl(40 90% 65%) 100%);
+    
+    /* Shadows with Cultural Warmth */
+    --shadow-monastery: 0 10px 25px -5px hsl(25 15% 15% / 0.1), 0 4px 10px -2px hsl(40 85% 55% / 0.1);
+    --shadow-golden: 0 0 30px hsl(40 85% 55% / 0.3);
+    
+    /* Smooth Transitions */
+    --transition-monastery: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Mode - Evening Monastery Theme */
+    --background: 25 15% 8%;
+    --foreground: 45 25% 92%;
+
+    --card: 25 15% 10%;
+    --card-foreground: 45 25% 92%;
+
+    --popover: 25 15% 10%;
+    --popover-foreground: 45 25% 92%;
+
+    /* Primary remains golden but slightly muted */
+    --primary: 40 80% 60%;
+    --primary-foreground: 25 15% 8%;
+    --primary-glow: 40 85% 70%;
+
+    /* Secondary - Darker monastery burgundy */
+    --secondary: 0 40% 15%;
+    --secondary-foreground: 45 25% 92%;
+
+    /* Muted - Dark stone */
+    --muted: 25 10% 20%;
+    --muted-foreground: 35 15% 65%;
+
+    /* Accent - Moonlit blue */
+    --accent: 210 50% 40%;
+    --accent-foreground: 45 25% 92%;
+
+    /* Monastery - Deep crimson */
+    --monastery: 0 55% 25%;
+    --monastery-foreground: 45 25% 92%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 45 25% 92%;
+
+    --border: 25 10% 25%;
+    --input: 25 10% 25%;
+    --ring: 40 80% 60%;
+
+    /* Dark gradients - enhanced visibility */
+    --gradient-hero: linear-gradient(135deg, hsl(40 80% 50%) 0%, hsl(0 60% 45%) 100%);
+    --gradient-monastery: linear-gradient(180deg, hsl(25 15% 8%) 0%, hsl(25 10% 12%) 100%);
+    --gradient-golden: linear-gradient(45deg, hsl(40 80% 60%) 0%, hsl(40 85% 70%) 100%);
+    
+    --shadow-monastery: 0 10px 25px -5px hsl(0 0% 0% / 0.5), 0 4px 10px -2px hsl(40 80% 60% / 0.2);
+    --shadow-golden: 0 0 30px hsl(40 80% 60% / 0.4);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+/* Monastery Video-like Background Animations */
+@layer components {
+  .monastery-mountains {
+    background: linear-gradient(180deg, 
+      hsl(var(--monastery) / 0.1) 0%,
+      hsl(var(--secondary) / 0.2) 30%,
+      hsl(var(--primary) / 0.15) 60%,
+      hsl(var(--accent) / 0.1) 100%
+    );
+    animation: mountain-drift 25s ease-in-out infinite;
+  }
+  
+  .monastery-mist {
+    background: radial-gradient(ellipse at center,
+      transparent 0%,
+      hsl(var(--background) / 0.1) 20%,
+      hsl(var(--muted) / 0.2) 40%,
+      transparent 70%
+    );
+    animation: mist-float 15s ease-in-out infinite;
+  }
+  
+  .monastery-prayer-flags {
+    background: repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      hsl(var(--primary) / 0.05) 20px,
+      transparent 40px,
+      hsl(var(--accent) / 0.05) 60px,
+      transparent 80px,
+      hsl(var(--monastery) / 0.05) 100px,
+      transparent 120px
+    );
+    animation: flag-flutter 8s ease-in-out infinite;
+  }
+}
+
+@keyframes mountain-drift {
+  0%, 100% { transform: translateX(0) scale(1); }
+  50% { transform: translateX(-2px) scale(1.01); }
+}
+
+@keyframes mist-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+  33% { transform: translateY(-10px) rotate(1deg); opacity: 0.5; }
+  66% { transform: translateY(5px) rotate(-1deg); opacity: 0.4; }
+}
+
+@keyframes flag-flutter {
+  0%, 100% { transform: translateX(0) skewX(0deg); }
+  25% { transform: translateX(2px) skewX(1deg); }
+  75% { transform: translateX(-1px) skewX(-0.5deg); }
+}
+
+@keyframes slow-drift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-5px); }
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(0.5deg); }
+}
+
+@keyframes prayer-flutter {
+  0%, 100% { transform: scaleX(1) skewX(0deg); }
+  25% { transform: scaleX(1.01) skewX(0.5deg); }
+  75% { transform: scaleX(0.99) skewX(-0.3deg); }
+}
+
+.animate-slow-drift { animation: slow-drift 20s ease-in-out infinite; }
+.animate-gentle-float { animation: gentle-float 12s ease-in-out infinite; }
+.animate-prayer-flutter { animation: prayer-flutter 6s ease-in-out infinite; }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
